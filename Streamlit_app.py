@@ -3,7 +3,7 @@ import numpy as np
 from datetime import time, datetime
 import streamlit as st
 import altair as alt
-from streamlit_pandas_profiling import st_profile_report
+
 
 st.write('Hello world!')
 st.write("""
@@ -109,12 +109,13 @@ if coffee:
      st.write("Okay, here's some coffee ☕")
 if cola:
      st.write("Here you go 🥤")
+st.header('st.latex Day 15')
 
-st.header('`streamlit_pandas_profiling Day 14`')
-df = pd.read_csv('https://raw.githubusercontent.com/dataprofessor/data/master/penguins_cleaned.csv')
-
-pr = df.profile_report()
-st_profile_report(pr)
+st.latex(r'''
+     a + ar + a r^2 + a r^3 + \cdots + a r^{n-1} =
+     \sum_{k=0}^{n-1} ar^k =
+     a \left(\frac{1-r^{n}}{1-r}\right)
+     ''')
 
 # df = pd.read_csv('Uganda_merged_2023-3-28.csv')
 # df.tail()
