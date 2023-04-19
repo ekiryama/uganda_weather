@@ -3,6 +3,7 @@ import numpy as np
 from datetime import time, datetime
 import streamlit as st
 import altair as alt
+from streamlit_pandas_profiling import st_profile_report
 
 st.write('Hello world!')
 st.write("""
@@ -109,7 +110,11 @@ if coffee:
 if cola:
      st.write("Here you go 🥤")
 
+st.header('`streamlit_pandas_profiling` Day 14')
+df = pd.read_csv('https://raw.githubusercontent.com/dataprofessor/data/master/penguins_cleaned.csv')
 
+pr = df.profile_report()
+st_profile_report(pr)
 
 
 # df = pd.read_csv('Uganda_merged_2023-3-28.csv')
