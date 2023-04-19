@@ -126,9 +126,11 @@ secondaryBackgroundColor="#AED6F1"
 textColor="#FFFFFF"
 font="monospace"
 """)
-
 number = st.sidebar.slider('Select a number:', 0, 10, 5)
 st.write('Selected number from slider widget is:', number)
+
+st.title('st.secrets Day 17')
+st.write(st.secrets['message'])
 # df = pd.read_csv('Uganda_merged_2023-3-28.csv')
 # df.tail()
 
